@@ -1,7 +1,7 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import javax.swing.*;
 
 public class Cadastro extends JFrame {
 
@@ -74,7 +74,6 @@ public class Cadastro extends JFrame {
         JComboBox comboUf = new JComboBox(new String[]{"SP", "RJ", "MG"});
         comboUf.setBounds(610, 150, 60, 25);
         painelzao.add(comboUf);
-
         painelzao.add(new JLabel("Município")).setBounds(680, 150, 70, 25);
         JTextField txtMunicipio = new JTextField();
         txtMunicipio.setBounds(750, 150, 100, 25);
@@ -131,7 +130,7 @@ public class Cadastro extends JFrame {
 
         JButton btnLimpar = new JButton("Limpar");
         btnLimpar.setBounds(450, 270, 100, 30);
-        estilizaBotao(btnLimpar);
+        estilizaLimpar(btnLimpar);
         painelzao.add(btnLimpar);
 
         ArrayList<JTextField> campos = new ArrayList<>();
@@ -166,9 +165,16 @@ public class Cadastro extends JFrame {
         setVisible(true);
     }
 
-    private void estilizaBotao(JButton btn) {
+    private void estilizaLimpar(JButton btn) {
         btn.setFocusPainted(false);
         btn.setBackground(new Color(224, 224, 224));
+        btn.setFont(new Font("Arial", Font.BOLD, 12));
+        btn.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+    }
+
+    private void estilizaBotao(JButton btn) {
+        btn.setFocusPainted(false);
+        btn.setBackground(new Color(255, 165, 0));
         btn.setFont(new Font("Arial", Font.BOLD, 12));
         btn.setBorder(BorderFactory.createLineBorder(Color.GRAY));
     }
